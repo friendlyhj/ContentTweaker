@@ -1,8 +1,13 @@
 package com.teamacronymcoders.contenttweaker.modules.vanilla.tileentity;
 
 import com.teamacronymcoders.contenttweaker.api.IRepresentation;
+import crafttweaker.annotations.ZenRegister;
+import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenMethod;
 import stanhebben.zenscript.annotations.ZenProperty;
 
+@ZenRegister
+@ZenClass("mods.contenttweaker.TileEntity")
 public class TileEntityRepresentation implements IRepresentation<TileEntityRepresentation> {
     @ZenProperty
     public String name;
@@ -28,6 +33,7 @@ public class TileEntityRepresentation implements IRepresentation<TileEntityRepre
     }
 
     @Override
+    @ZenMethod
     public void register() {
         TileEntityContent.REPRESENTATION_MAP.put(name, this);
     }
